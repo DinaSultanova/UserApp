@@ -12,14 +12,16 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var welcomeUser: UILabel!
     
     var userName: String!
+    var password: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        welcomeUser.text = userName
+         welcomeUser.text = userName
     }
     
     @IBAction func logOut(_ sender: Any) {
         dismiss(animated: true)
+        
     }
     
   

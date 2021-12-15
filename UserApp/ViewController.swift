@@ -20,10 +20,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-         let welcomeVC = segue.destination as! WelcomeViewController
+       _ = segue.destination as! WelcomeViewController
      }
  
-    
     @IBAction func reminderName(_ sender: Any) {
         showAlert(title: "Name", message: "Your name is Dina")
         userName.text = "Dina"
@@ -34,20 +33,18 @@ class ViewController: UIViewController {
         password.text = "123"
     }
     @IBAction func unwind(for segue: UIStoryboardSegue) {
-        let welcomeVC = segue.source as? WelcomeViewController
-        welcomeVC?.welcomeUser.text = ("Welcome,  \(userName.text)")
+        let _ = segue.source as? WelcomeViewController
+        userName.text = nil
+        password.text = nil
     }
     
     @IBAction func logIn(_ sender: Any) {
-        let userName = String(userName.text ?? "") ?? ""
-        let password = String(password.text ?? "") ?? ""
+        let userName = String(userName.text ?? "")
+        let password = String(password.text ?? "")
         if userName == "Dina" && password == "123" {performSegue(withIdentifier: "showWelcomeVC", sender: Any?.self)} else {showAlert(title: "Mistake!", message: "Your name or password is wrong"); return }
 
     }
-
-    }
-    
-
+}
 
 // MARK: - Private Methods
 
@@ -55,7 +52,6 @@ extension ViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let OkAction = UIAlertAction(title: "Ok", style: .default) { _ in
-      
         }
         alert.addAction(OkAction)
         present(alert, animated: true)
