@@ -41,7 +41,8 @@ class ViewController: UIViewController {
     @IBAction func logIn(_ sender: Any) {
         let userName = String(userName.text ?? "") ?? ""
         let password = String(password.text ?? "") ?? ""
-        if userName != "Dina" && password != "123" {showAlert(title: "Mistake!", message: "Your name or password is wrong")} else {performSegue(withIdentifier: "showWelcomeVC", sender: Any?.self)}
+        if userName == "Dina" && password == "123" {performSegue(withIdentifier: "showWelcomeVC", sender: Any?.self)} else {showAlert(title: "Mistake!", message: "Your name or password is wrong"); return }
+
     }
 
     }
@@ -54,7 +55,7 @@ extension ViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let OkAction = UIAlertAction(title: "Ok", style: .default) { _ in
-            self.userName.text = ""
+      
         }
         alert.addAction(OkAction)
         present(alert, animated: true)
