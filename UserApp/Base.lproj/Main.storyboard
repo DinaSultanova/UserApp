@@ -40,7 +40,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot user name?"/>
                                         <connections>
-                                            <action selector="reminderName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CZ5-g2-hkr"/>
+                                            <action selector="reminderName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jeg-aK-hEr"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Yq-kNc">
@@ -49,7 +49,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot password?"/>
                                         <connections>
-                                            <action selector="reminderPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lw4-OZ-ds9"/>
+                                            <action selector="reminderPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1KQ-xj-vgL"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -60,7 +60,8 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <segue destination="Lkx-cb-d1u" kind="presentation" id="yZ2-nO-nJx"/>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lX2-u4-hhL"/>
+                                    <segue destination="Lkx-cb-d1u" kind="presentation" identifier="showWelcomeVC" id="Tdi-0U-Wbt"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -79,10 +80,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameReminder" destination="zAY-9x-0dW" id="NhU-Mt-ArJ"/>
-                        <outlet property="password" destination="aLX-Ec-2Kb" id="Dwh-5L-LVT"/>
-                        <outlet property="passwordReminder" destination="bgu-Yq-kNc" id="Nie-br-GYS"/>
-                        <outlet property="userName" destination="RDX-XT-GtT" id="tpH-B2-RiA"/>
+                        <outlet property="logInButton" destination="iKF-0E-eGi" id="uMl-Si-fLb"/>
+                        <outlet property="nameReminder" destination="zAY-9x-0dW" id="Ns9-sY-9vK"/>
+                        <outlet property="password" destination="aLX-Ec-2Kb" id="pPn-Dl-tDd"/>
+                        <outlet property="passwordReminder" destination="bgu-Yq-kNc" id="Rqu-Zk-oEF"/>
+                        <outlet property="userName" destination="RDX-XT-GtT" id="htJ-q5-UUL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -92,9 +94,9 @@
         <!--Welcome View Controller-->
         <scene sceneID="ERq-FF-rKD">
             <objects>
-                <viewController id="Lkx-cb-d1u" customClass="WelcomeViewController" customModule="UserApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Lkx-cb-d1u" customClass="WelcomeViewController" customModule="UserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yCX-yn-2Kf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2q-tE-u4A">
@@ -105,7 +107,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXe-mB-r0w">
-                                <rect key="frame" x="160" y="572" width="94" height="36"/>
+                                <rect key="frame" x="160" y="626" width="94" height="36"/>
                                 <color key="backgroundColor" systemColor="opaqueSeparatorColor"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
@@ -118,7 +120,8 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="logOut:" destination="Lkx-cb-d1u" eventType="touchUpInside" id="2bb-am-w7O"/>
+                                    <action selector="logOut:" destination="Lkx-cb-d1u" eventType="touchUpInside" id="yvM-Uo-EzW"/>
+                                    <segue destination="eCo-tg-asl" kind="unwind" unwindAction="unwindFor:" id="5xB-Fe-cat"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -131,10 +134,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="welcomeUser" destination="d2q-tE-u4A" id="Ncw-V4-LhN"/>
+                        <outlet property="welcomeUser" destination="d2q-tE-u4A" id="bcj-mZ-8IT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgD-Aq-M2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="eCo-tg-asl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="685.50724637681162" y="68.973214285714278"/>
         </scene>

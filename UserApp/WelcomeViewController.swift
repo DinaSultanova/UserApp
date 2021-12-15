@@ -11,28 +11,18 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeUser: UILabel!
     
+    var userName: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-      //  welcomeUser = textField.text
-        
-      
+        welcomeUser.text = userName
     }
     
     @IBAction func logOut(_ sender: Any) {
         dismiss(animated: true)
     }
     
-    //@IBAction func unwind(for segue: UIStoryboardSegue) {
-        
-    }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  
+}
 
 
