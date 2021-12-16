@@ -11,9 +11,6 @@ class LoginViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var userNameTF: UITextField!
-    @IBOutlet weak var logInButton: UIButton!
-    @IBOutlet weak var passwordReminder: UIButton!
-    @IBOutlet weak var nameReminder: UIButton!
     
     var userName: String!
     
@@ -21,10 +18,7 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         userNameTF.text = userName
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       _ = segue.destination as! WelcomeViewController
-     }
- 
+    
     @IBAction func reminderName(_ sender: Any) {
         showAlert(title: "Name", message: "Your name is Dina")
         userNameTF.text = "Dina"
