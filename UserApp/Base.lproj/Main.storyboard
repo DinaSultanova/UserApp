@@ -11,7 +11,7 @@
         <!--LoginView Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="LoginView Controller" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="LoginView Controller" customClass="LoginViewController" customModule="UserApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -61,7 +61,7 @@
                                 <state key="normal" title="Log in"/>
                                 <connections>
                                     <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amL-aa-6aS"/>
-                                    <segue destination="Lkx-cb-d1u" kind="presentation" identifier="showWelomeVC" id="phO-no-qJg"/>
+                                    <segue destination="Lkx-cb-d1u" kind="presentation" identifier="showWelсomeVC" id="phO-no-qJg"/>
                                 </connections>
                             </button>
                         </subviews>
