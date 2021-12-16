@@ -80,9 +80,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="nameReminder" destination="zAY-9x-0dW" id="8Ft-Do-J7v"/>
                         <outlet property="password" destination="aLX-Ec-2Kb" id="9gl-aC-t2O"/>
-                        <outlet property="passwordReminder" destination="bgu-Yq-kNc" id="d9a-Au-7u4"/>
                         <outlet property="userNameTF" destination="RDX-XT-GtT" id="fek-Ao-7wn"/>
                     </connections>
                 </viewController>
