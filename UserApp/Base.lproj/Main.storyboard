@@ -11,7 +11,7 @@
         <!--LoginView Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" userLabel="LoginView Controller" customClass="ViewController" customModule="UserApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="LoginView Controller" customClass="LoginViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -40,7 +40,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot user name?"/>
                                         <connections>
-                                            <action selector="reminderName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jeg-aK-hEr"/>
+                                            <action selector="reminderName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PdR-O9-4CC"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Yq-kNc">
@@ -49,7 +49,7 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot password?"/>
                                         <connections>
-                                            <action selector="reminderPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1KQ-xj-vgL"/>
+                                            <action selector="reminderPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jxu-g1-cpd"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -60,7 +60,7 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lX2-u4-hhL"/>
+                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y7a-pP-vcd"/>
                                     <segue destination="Lkx-cb-d1u" kind="presentation" identifier="showWelcomeVC" id="Tdi-0U-Wbt"/>
                                 </connections>
                             </button>
@@ -80,11 +80,11 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="logInButton" destination="iKF-0E-eGi" id="uMl-Si-fLb"/>
-                        <outlet property="nameReminder" destination="zAY-9x-0dW" id="Ns9-sY-9vK"/>
-                        <outlet property="password" destination="aLX-Ec-2Kb" id="pPn-Dl-tDd"/>
-                        <outlet property="passwordReminder" destination="bgu-Yq-kNc" id="Rqu-Zk-oEF"/>
-                        <outlet property="userName" destination="RDX-XT-GtT" id="htJ-q5-UUL"/>
+                        <outlet property="logInButton" destination="iKF-0E-eGi" id="Xpo-vk-UH8"/>
+                        <outlet property="nameReminder" destination="zAY-9x-0dW" id="Y2e-1F-s1U"/>
+                        <outlet property="password" destination="aLX-Ec-2Kb" id="Jix-N9-g1b"/>
+                        <outlet property="passwordReminder" destination="bgu-Yq-kNc" id="ei2-og-d65"/>
+                        <outlet property="userNameTF" destination="RDX-XT-GtT" id="Ms9-DK-VVy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -99,10 +99,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome," textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2q-tE-u4A">
-                                <rect key="frame" x="106" y="104" width="111" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2q-tE-u4A">
+                                <rect key="frame" x="100" y="104" width="214" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -127,9 +126,12 @@
                         <viewLayoutGuide key="safeArea" id="z4t-Ku-yC4"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="d2q-tE-u4A" firstAttribute="top" secondItem="z4t-Ku-yC4" secondAttribute="top" constant="60" id="7Qg-2M-zni"/>
                             <constraint firstItem="MXe-mB-r0w" firstAttribute="leading" secondItem="z4t-Ku-yC4" secondAttribute="leading" constant="160" id="9ek-lw-u7u"/>
+                            <constraint firstItem="d2q-tE-u4A" firstAttribute="leading" secondItem="z4t-Ku-yC4" secondAttribute="leading" constant="100" id="Atp-pT-PD6"/>
                             <constraint firstItem="z4t-Ku-yC4" firstAttribute="bottom" secondItem="MXe-mB-r0w" secondAttribute="bottom" constant="200" id="LZA-nj-JjO"/>
                             <constraint firstItem="z4t-Ku-yC4" firstAttribute="trailing" secondItem="MXe-mB-r0w" secondAttribute="trailing" constant="160" id="jjV-Tr-Fgp"/>
+                            <constraint firstItem="z4t-Ku-yC4" firstAttribute="trailing" secondItem="d2q-tE-u4A" secondAttribute="trailing" constant="100" id="v80-yR-1vQ"/>
                         </constraints>
                     </view>
                     <connections>

@@ -7,17 +7,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class LoginViewController: UIViewController {
 
     @IBOutlet weak var password: UITextField!
-    @IBOutlet weak var userName: UITextField!
+    @IBOutlet weak var userNameTF: UITextField!
     @IBOutlet weak var logInButton: UIButton!
     @IBOutlet weak var passwordReminder: UIButton!
     @IBOutlet weak var nameReminder: UIButton!
     
+    var userName: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        userNameTF.text = userName
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
        _ = segue.destination as! WelcomeViewController
@@ -25,7 +27,7 @@ class ViewController: UIViewController {
  
     @IBAction func reminderName(_ sender: Any) {
         showAlert(title: "Name", message: "Your name is Dina")
-        userName.text = "Dina"
+        userNameTF.text = "Dina"
     }
     
     @IBAction func reminderPassword(_ sender: Any) {
@@ -34,12 +36,12 @@ class ViewController: UIViewController {
     }
     @IBAction func unwind(for segue: UIStoryboardSegue) {
         let _ = segue.source as? WelcomeViewController
-        userName.text = nil
+        userNameTF.text = nil
         password.text = nil
     }
     
     @IBAction func logIn(_ sender: Any) {
-        let userName = String(userName.text ?? "")
+        let userName = String(userNameTF.text ?? "")
         let password = String(password.text ?? "")
         if userName == "Dina" && password == "123" {performSegue(withIdentifier: "showWelcomeVC", sender: Any?.self)} else {showAlert(title: "Mistake!", message: "Your name or password is wrong"); return }
 
@@ -48,7 +50,7 @@ class ViewController: UIViewController {
 
 // MARK: - Private Methods
 
-extension ViewController {
+extension LoginViewController {
     private func showAlert(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let OkAction = UIAlertAction(title: "Ok", style: .default) { _ in

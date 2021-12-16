@@ -11,20 +11,26 @@ class WelcomeViewController: UIViewController {
 
     @IBOutlet weak var welcomeUser: UILabel!
     
-    var userName: String!
+    //var userName: String!
     var password: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-         welcomeUser.text = userName
     }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let loginVC = segue.destination as! LoginViewController
+        loginVC.userName = welcomeUser.text
+        
+    
+     }
+ 
     
     @IBAction func logOut(_ sender: Any) {
         dismiss(animated: true)
         
     }
     
-  
+   
 }
 
 
