@@ -7,19 +7,18 @@
 
 import Metal
 
-class User {
+struct User {
     var username: String
     var password: String
     var age: String
+    var hobby: String
     
-    init(
-        username: String,
-        password: String
-    ){
-        self.username = username
-        self.password = password
+    static func getPerson() -> User {
+    User(
+        username: "Dina Sultanova",
+        password: "123",
+        age: "29",
+        hobby: "Table games, Instagram blogging")
     }
-    
-    static func getPerson() -> String {
-           }
 }
+
