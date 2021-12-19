@@ -8,48 +8,57 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
-    @IBOutlet weak var password: UITextField!
+    
+    //MARK: IB Outlets
+    
     @IBOutlet weak var userNameTF: UITextField!
+    @IBOutlet weak var passwordTF: UITextField!
     
-    var userName: String!
+    // MARK: - Private properties
+    private let user = "Dina"
+    private let password = "123"
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        userNameTF.text = userName
+    // MARK: Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let welcomeVC = segue.destination as? WelcomeViewController else {return}
+        welcomeVC.user = user
     }
     
-    @IBAction func reminderName(_ sender: Any) {
-        showAlert(title: "Name", message: "Your name is Dina")
-        userNameTF.text = "Dina"
+    //MARK: IBActions
+    
+    @IBAction func logIn() {
+        if userNameTF.text != user || passwordTF.text != password {
+            showAlert(
+                title: "Invalid login or password",
+                message: "Please, enter correct login and password",
+                textField: passwordTF
+                )
+        }
     }
     
-    @IBAction func reminderPassword(_ sender: Any) {
-        showAlert(title: "Password", message: "Your password is 123")
-        password.text = "123"
-    }
-    @IBAction func unwind(for segue: UIStoryboardSegue) {
-        let _ = segue.source as? WelcomeViewController
-        userNameTF.text = nil
-        password.text = nil
+    @IBAction func forgotRegisterData(_ sender: UIButton) {
+        sender.tag == 0
+        ? showAlert(title: "Oops!", message: "Your name is \(user)")
+        : showAlert(title: "Oops!", message: "Your password is \(password)")
     }
     
-    @IBAction func logIn(_ sender: Any) {
-        let userName = String(userNameTF.text ?? "")
-        let password = String(password.text ?? "")
-        if userName == "Dina" && password == "123" {performSegue(withIdentifier: "showWelcomeVC", sender: Any?.self)} else {showAlert(title: "Mistake!", message: "Your name or password is wrong"); return }
-
+    @IBAction func unwindSegue(segue: UIStoryboardSegue) {
+        userNameTF.text = ""
+        passwordTF.text = ""
     }
 }
+
 
 // MARK: - Private Methods
 
 extension LoginViewController {
-    private func showAlert(title: String, message: String) {
+    private func showAlert(title: String, message: String, textField: UITextField? = nil) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
       let OkAction = UIAlertAction(title: "Ok", style: .default) { _ in
+          textField?.text = ""
         }
         alert.addAction(OkAction)
         present(alert, animated: true)
     }
 }
+

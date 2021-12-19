@@ -40,16 +40,16 @@
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot user name?"/>
                                         <connections>
-                                            <action selector="reminderName:" destination="BYZ-38-t0r" eventType="touchUpInside" id="r2G-Zr-bou"/>
+                                            <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="V2q-5T-cAa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Yq-kNc">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bgu-Yq-kNc">
                                         <rect key="frame" x="211" y="0.0" width="123" height="30"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Forgot password?"/>
                                         <connections>
-                                            <action selector="reminderPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="A0m-2v-Y1F"/>
+                                            <action selector="forgotRegisterData:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Jhn-XK-7Lj"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -60,8 +60,8 @@
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                 <state key="normal" title="Log in"/>
                                 <connections>
-                                    <action selector="logIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="amL-aa-6aS"/>
-                                    <segue destination="Lkx-cb-d1u" kind="presentation" identifier="showWelсomeVC" id="phO-no-qJg"/>
+                                    <action selector="logIn" destination="BYZ-38-t0r" eventType="touchUpInside" id="XQF-vi-nmJ"/>
+                                    <segue destination="Lkx-cb-d1u" kind="presentation" identifier="ShowWelcomeVC" id="2hn-NG-gKl"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -80,8 +80,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="password" destination="aLX-Ec-2Kb" id="9gl-aC-t2O"/>
-                        <outlet property="userNameTF" destination="RDX-XT-GtT" id="fek-Ao-7wn"/>
+                        <outlet property="passwordTF" destination="aLX-Ec-2Kb" id="n1A-0b-B4U"/>
+                        <outlet property="userNameTF" destination="RDX-XT-GtT" id="9Kd-oA-KpE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -115,7 +115,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="logOut:" destination="Lkx-cb-d1u" eventType="touchUpInside" id="AmI-kD-Cvv"/>
+                                    <segue destination="d9r-L4-KaB" kind="unwind" unwindAction="unwindSegueWithSegue:" id="ooR-hv-QYS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -135,6 +135,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BgD-Aq-M2b" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="d9r-L4-KaB" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="685.50724637681162" y="68.973214285714278"/>
         </scene>
