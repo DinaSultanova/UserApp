@@ -9,6 +9,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
+    let person = User.getPerson()
+    
     //MARK: IB Outlets
     
     @IBOutlet weak var userNameTF: UITextField!
