@@ -8,17 +8,31 @@
 import Metal
 
 struct User {
-    var username: String
-    var password: String
-    var age: String
-    var hobby: String
+    let login: String
+    let password: String
+    let person: Person
     
-    static func getPerson() -> User {
+    static func getUserData() -> User {
     User(
-        username: "Dina Sultanova",
-        password: "123",
-        age: "29",
-        hobby: "Table games, Instagram blogging")
+        login: "User",
+        password: "Password",
+        person: Person.getPerson()
+        )
     }
 }
+
+struct Person {
+    let name: String
+    let surname: String
+    let image: String
+    
+    var fullName: String {
+        "\(name) \(surname)"
+    }
+    
+    static func getPerson() -> Person {
+        Person(name: "Dina", surname: "Sultanova", image: "DinaImage")
+    }
+}
+
 

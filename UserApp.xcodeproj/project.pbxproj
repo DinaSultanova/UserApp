@@ -15,6 +15,7 @@
 		362455462769F88A00B3D095 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 362455442769F88A00B3D095 /* LaunchScreen.storyboard */; };
 		3624554E276A1F3D00B3D095 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3624554D276A1F3D00B3D095 /* WelcomeViewController.swift */; };
 		3644F767276FC9BC001ABC33 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F766276FC9BC001ABC33 /* Person.swift */; };
+		3644F769277343E6001ABC33 /* UserInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3644F768277343E6001ABC33 /* UserInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		362455472769F88A00B3D095 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3624554D276A1F3D00B3D095 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		3644F766276FC9BC001ABC33 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		3644F768277343E6001ABC33 /* UserInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 			children = (
 				3624553D2769F88600B3D095 /* LoginViewController.swift */,
 				3624554D276A1F3D00B3D095 /* WelcomeViewController.swift */,
+				3644F768277343E6001ABC33 /* UserInfoViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3644F767276FC9BC001ABC33 /* Person.swift in Sources */,
+				3644F769277343E6001ABC33 /* UserInfoViewController.swift in Sources */,
 				3624553E2769F88600B3D095 /* LoginViewController.swift in Sources */,
 				3624554E276A1F3D00B3D095 /* WelcomeViewController.swift in Sources */,
 				3624553A2769F88600B3D095 /* AppDelegate.swift in Sources */,
