@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
                 )
             return
         }
-        performSegue(withIdentifier: "showWelcomeVC", sender: nil)
+        performSegue(withIdentifier: "ShowWelcomeVC", sender: nil)
     }
     
     @IBAction func forgotRegisterData(_ sender: UIButton) {
@@ -72,5 +72,4 @@ extension LoginViewController {
     }
 }
 
-// MARK: Navigation
 
